@@ -8,6 +8,20 @@
 
 import Foundation
 
+ 
+ typealias CompletionHander = (_ Success : Bool) -> ()
+ 
+ //Url
+ let BASE_URL = "http://localhost:3005/v1/"
+ let URL_REGISTER = "\(BASE_URL)account/register"
+ 
  //segues
  
  let GO_TO_LOGIN = "goToLogin"
+ let To_CREATE_ACCOUNT = "toCreateAccount"
+ let UN_WIND_TO_CHANNEL = "unwindToChannel"
+ 
+ //
+ let TOKEN_KEY  =  "token"
+ let LOGGED_IN_KEY = "loggedIn"
+ let USER_EMAIL = "userEmail"
