@@ -1,70 +1,142 @@
 //
 //  AuthService.swift
-//  Slack
+//  Smack
 //
-//  Created by MalikHassnain on 10/06/2019.
-//  Copyright © 2019 MalikHassnain. All rights reserved.
+//  Created by Jonny B on 7/17/17.
+//  Copyright © 2017 Jonny B. All rights reserved.
 //
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class AuthService {
+    
     static let instance = AuthService()
     
     let defaults = UserDefaults.standard
     
-//    var isLoggedIn : Bool {
-//        get {
-//                return defaults.bool(forKey: LOGGED_IN_KEY)
-//
-//        }
-//
-//        set {
-//            defaults.set(newValue, forKey: LOGGED_IN_KEY)
-//        }
-//    }
-//
-//    var authToken: String {
-//        get {
-//            return defaults.value(forKey: TOKEN_KEY) as! String
-//        }
-//
-//        set{
-//            defaults.set(newValue, forKey: TOKEN_KEY)
-//        }
-//    }
-//
-//    var userEmail: String {
-//        get{
-//            return defaults.value(forKey: USER_EMAIL) as! String
-//        }
-//
-//        set{
-//            defaults.set(newValue, forKey: USER_EMAIL)
-//        }
-//    }
+    var isLoggedIn : Bool {
+        get {
+            return defaults.bool(forKey: LOGGED_IN_KEY)
+        }
+        set {
+            defaults.set(newValue, forKey: LOGGED_IN_KEY)
+        }
+    }
     
-    func registerUser(email: String, password: String, completion: @escaping CompletionHander){
-        let lowerCaseEmail = email.lowercased()
-        let header = [
-            "ContentType" : "application/json; charset=utf-8"
-        ]
+    var authToken: String {
+        get {
+            return defaults.value(forKey: TOKEN_KEY) as! String
+        }
+        set {
+            defaults.set(newValue, forKey: TOKEN_KEY)
+        }
+    }
+    
+    var userEmail: String {
+        get {
+            return defaults.value(forKey: USER_EMAIL) as! String
+        }
+        set {
+            defaults.set(newValue, forKey: USER_EMAIL)
+        }
+    }
+    
+    func registerUser(email: String, password: String, completion: @escaping CompletionHander) {
         
-        let body : [String: Any] = [
+        let lowerCaseEmail = email.lowercased()
+        
+        let body: [String: Any] = [
             "email": lowerCaseEmail,
             "password": password
         ]
         
-        Alamofire.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseString { (response) in
+        Alamofire.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseString { (response) in
+            
             if response.result.error == nil {
                 completion(true)
-            }else{
+            } else {
                 completion(false)
                 debugPrint(response.result.error as Any)
             }
         }
     }
+    
+    func loginUser(email: String, password: String, completion: @escaping CompletionHander) {
+        
+        let lowerCaseEmail = email.lowercased()
+        
+        let body: [String: Any] = [
+            "email": lowerCaseEmail,
+            "password": password
+        ]
+        
+        Alamofire.request(URL_LOGIN, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
+            
+            if response.result.error == nil {
+                guard let data = response.data else { return }
+                let json = JSON(data)
+                self.userEmail = json["user"].stringValue
+                self.authToken = json["token"].stringValue
+//                debugPrint("auth token \(self.authToken)")
+                
+                self.isLoggedIn = true
+                completion(true)
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+    }
+    
+    func createUser(name: String, email: String, avatarName: String, avatarColor: String, completion: @escaping CompletionHander) {
+        
+        let lowerCaseEmail = email.lowercased()
+        
+        let body: [String : Any] = [
+            "name": name,
+            "email": lowerCaseEmail,
+            "avatarName": avatarName,
+            "avatarColor": avatarColor
+        ]
+        debugPrint(AuthService.instance.authToken)
+        let header = [
+            "Authorization":"Bearer \(AuthService.instance.authToken)",
+            
+            "ContentType" : "application/json; charset=utf-8"
+        ]
+        
+        Alamofire.request(URL_ADD_USER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+            
+            if response.result.error == nil {
+               
+                guard let data = response.data else { return }
+                let json = JSON(data)
+                let id = json["_id"].stringValue
+                let color = json["avatarColor"].stringValue
+                let avatarName = json["avatarName"].stringValue
+                let email = json["email"].stringValue
+                let name = json["name"].stringValue
+                
+                UserDataService.instance.setUserData(id: id, avatarColor: color, avatarName: avatarName, email: email, name: name)
+                completion(true)
+                
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 }
