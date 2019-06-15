@@ -22,6 +22,9 @@
 		4A158DB722AE72EF007E8C9E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A158DB622AE72EF007E8C9E /* AuthService.swift */; };
 		4A8DD0BB22AC076200C3C4B7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DD0BA22AC076200C3C4B7 /* LoginVC.swift */; };
 		4A8DD0BD22AC0A5900C3C4B7 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DD0BC22AC0A5900C3C4B7 /* CreateAccountVC.swift */; };
+		4AB04E1822B546FE0034264F /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB04E1722B546FE0034264F /* MessageService.swift */; };
+		4AB04E1A22B547780034264F /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB04E1922B547780034264F /* Channel.swift */; };
+		4AB04E1C22B552BC0034264F /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB04E1B22B552BC0034264F /* ChannelCell.swift */; };
 		4ADF97EA22B331D1000912C0 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF97E922B331D1000912C0 /* UserDataService.swift */; };
 		4AE90F3722B2BEBE009EA99E /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE90F3622B2BEBE009EA99E /* RoundedButton.swift */; };
 		4AF2136B22B3FB9D003568EC /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF2136A22B3FB9D003568EC /* CircleImage.swift */; };
@@ -50,6 +53,9 @@
 		4A158DB622AE72EF007E8C9E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		4A8DD0BA22AC076200C3C4B7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		4A8DD0BC22AC0A5900C3C4B7 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
+		4AB04E1722B546FE0034264F /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
+		4AB04E1922B547780034264F /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		4AB04E1B22B552BC0034264F /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		4ADF97E922B331D1000912C0 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		4AE90F3622B2BEBE009EA99E /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		4AF2136A22B3FB9D003568EC /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
@@ -120,6 +126,7 @@
 		4A05607D22ABCD7500854968 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4AB04E1922B547780034264F /* Channel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -131,6 +138,7 @@
 				4AE90F3622B2BEBE009EA99E /* RoundedButton.swift */,
 				4A05C0F722B3DFB300853ED1 /* AvatarCell.swift */,
 				4AF2136A22B3FB9D003568EC /* CircleImage.swift */,
+				4AB04E1B22B552BC0034264F /* ChannelCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -161,6 +169,7 @@
 			children = (
 				4A158DB622AE72EF007E8C9E /* AuthService.swift */,
 				4ADF97E922B331D1000912C0 /* UserDataService.swift */,
+				4AB04E1722B546FE0034264F /* MessageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -321,10 +330,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A0B9F0722B4C8560079AC9F /* ProfileVC.swift in Sources */,
+				4AB04E1C22B552BC0034264F /* ChannelCell.swift in Sources */,
 				4A05608322ABCDD200854968 /* ChannelVC.swift in Sources */,
 				4A05C0F622B3D93300853ED1 /* AvatarPickerVC.swift in Sources */,
 				4AE90F3722B2BEBE009EA99E /* RoundedButton.swift in Sources */,
+				4AB04E1A22B547780034264F /* Channel.swift in Sources */,
 				4AF2136B22B3FB9D003568EC /* CircleImage.swift in Sources */,
+				4AB04E1822B546FE0034264F /* MessageService.swift in Sources */,
 				4A05608122ABCDC100854968 /* ChatVC.swift in Sources */,
 				4A05C0F822B3DFB300853ED1 /* AvatarCell.swift in Sources */,
 				4A8DD0BD22AC0A5900C3C4B7 /* CreateAccountVC.swift in Sources */,

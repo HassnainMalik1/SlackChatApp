@@ -16,7 +16,8 @@ import Foundation
  let URL_REGISTER = "http://localhost:3005/v1/account/register"
  let URL_LOGIN = "http://localhost:3005/v1/account/login"
  let URL_ADD_USER = "http://localhost:3005/v1/user/add"
- let URL_USER_BY_EMAIL = "http://localhost:3005/v1//user/byEmail"
+ let URL_USER_BY_EMAIL = "http://localhost:3005/v1/user/byEmail"
+ let URL_GET_CHANNELS = "http://localhost:3005/v1/channel"
  
  
  
