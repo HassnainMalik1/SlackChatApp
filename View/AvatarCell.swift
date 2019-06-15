@@ -18,8 +18,7 @@ class AvatarCell: UICollectionViewCell {
     @IBOutlet weak var avatarImage: UIImageView!
     
     override func awakeFromNib() {
-        super.awakeFromNib()
-        
+        self.setUpView()        
     }
 
     func configureCell(index: Int, type: AvatarType)  {

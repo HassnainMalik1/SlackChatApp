@@ -101,11 +101,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANo-hS-CFb">
-                                <rect key="frame" x="320" y="149" width="22" height="22"/>
+                                <rect key="frame" x="326" y="149" width="16" height="22"/>
                                 <state key="normal" image="addChannelButton"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPA-kv-xMo">
-                                <rect key="frame" x="163" y="750" width="53" height="36"/>
+                                <rect key="frame" x="153" y="750" width="53" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -114,7 +114,7 @@
                                     <action selector="loginButtonPressed:" destination="XVZ-OX-tIK" eventType="touchUpInside" id="4fn-fS-qEo"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="hOF-OW-tC2">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="hOF-OW-tC2" customClass="CircleImage" customModule="Slack" customModuleProvider="target">
                                 <rect key="frame" x="33" y="718" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="N4i-Y0-NwB"/>
@@ -164,7 +164,7 @@
                             <constraint firstItem="m8K-Np-eeX" firstAttribute="leading" secondItem="mTp-Ie-RIr" secondAttribute="leading" constant="46" id="j4Q-WK-Fx0"/>
                             <constraint firstItem="ANo-hS-CFb" firstAttribute="centerY" secondItem="bBx-Qw-ITd" secondAttribute="centerY" id="nJ6-Lq-Zd6"/>
                             <constraint firstItem="hOF-OW-tC2" firstAttribute="leading" secondItem="mTp-Ie-RIr" secondAttribute="leading" constant="33" id="uAw-rD-8UK"/>
-                            <constraint firstItem="aPA-kv-xMo" firstAttribute="leading" secondItem="hOF-OW-tC2" secondAttribute="trailing" constant="30" id="wtq-fF-85n"/>
+                            <constraint firstItem="aPA-kv-xMo" firstAttribute="leading" secondItem="hOF-OW-tC2" secondAttribute="trailing" constant="20" id="wtq-fF-85n"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mTp-Ie-RIr"/>
                         <userDefinedRuntimeAttributes>
@@ -178,6 +178,7 @@
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="aPA-kv-xMo" id="Xxx-qJ-k5p"/>
+                        <outlet property="userImage" destination="hOF-OW-tC2" id="G4z-WS-TtP"/>
                         <segue destination="mDn-07-Eei" kind="show" identifier="goToLogin" id="dQP-NM-Rsx"/>
                     </connections>
                 </viewController>
@@ -194,7 +195,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ffh-hP-UkC">
-                                <rect key="frame" x="356" y="54" width="28" height="28"/>
+                                <rect key="frame" x="368" y="54" width="16" height="22"/>
                                 <state key="normal" image="closeButton"/>
                                 <connections>
                                     <action selector="closedPressed:" destination="mDn-07-Eei" eventType="touchUpInside" id="a9M-S8-TIk"/>
@@ -429,7 +430,7 @@
                                 <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="afc-IK-0HS">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="afc-IK-0HS" customClass="CircleImage" customModule="Slack" customModuleProvider="target">
                                 <rect key="frame" x="147" y="488.66666666666674" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="0HC-GL-7Ze"/>
@@ -443,7 +444,7 @@
                                     <constraint firstAttribute="height" constant="35" id="yuK-xG-9Oy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                <state key="normal" title="Don't have account? Sign up here.">
+                                <state key="normal" title="Generate Background Color">
                                     <color key="titleColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -451,10 +452,15 @@
                                     <action selector="createAccountBtnPressed:" destination="mDn-07-Eei" eventType="touchUpInside" id="jJ8-1u-8Ld"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="zbi-RP-r0Z">
+                                <rect key="frame" x="188.66666666666666" y="389.66666666666669" width="37" height="37"/>
+                                <color key="color" red="0.15686274510000001" green="0.66666666669999997" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Gjk-fO-zO8" firstAttribute="bottom" secondItem="MYh-4h-Dbq" secondAttribute="bottom" constant="30" id="6Rq-mA-P6Q"/>
+                            <constraint firstItem="zbi-RP-r0Z" firstAttribute="centerX" secondItem="EkQ-0x-BvL" secondAttribute="centerX" id="7LR-bp-VJx"/>
                             <constraint firstItem="hYG-cx-hSl" firstAttribute="top" secondItem="Gjk-fO-zO8" secondAttribute="top" constant="100" id="7O0-ja-odL"/>
                             <constraint firstItem="afc-IK-0HS" firstAttribute="top" secondItem="DKr-Qp-J7V" secondAttribute="bottom" constant="40" id="BOp-dc-WKW"/>
                             <constraint firstItem="rg6-i2-ToR" firstAttribute="centerX" secondItem="EkQ-0x-BvL" secondAttribute="centerX" id="FTa-Gq-1Qs"/>
@@ -469,10 +475,12 @@
                             <constraint firstItem="hYG-cx-hSl" firstAttribute="centerX" secondItem="EkQ-0x-BvL" secondAttribute="centerX" id="ri6-E3-gcc"/>
                             <constraint firstItem="3zw-mL-LNL" firstAttribute="top" secondItem="Gjk-fO-zO8" secondAttribute="top" constant="10" id="u8I-en-Ekw"/>
                             <constraint firstItem="rg6-i2-ToR" firstAttribute="top" secondItem="afc-IK-0HS" secondAttribute="top" id="yjG-Tq-3Wu"/>
+                            <constraint firstItem="zbi-RP-r0Z" firstAttribute="centerY" secondItem="EkQ-0x-BvL" secondAttribute="centerY" constant="-40" id="zSV-F3-neK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gjk-fO-zO8"/>
                     </view>
                     <connections>
+                        <outlet property="spinner" destination="zbi-RP-r0Z" id="MhS-Ui-oPy"/>
                         <outlet property="userEmailText" destination="6PY-2u-VD9" id="jVY-qX-Twe"/>
                         <outlet property="userImage" destination="afc-IK-0HS" id="jsv-ex-ADf"/>
                         <outlet property="userNameText" destination="W5t-o4-9p5" id="Yok-7j-MjT"/>

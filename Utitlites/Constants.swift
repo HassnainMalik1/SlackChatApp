@@ -26,6 +26,12 @@ import Foundation
  let UN_WIND_TO_CHANNEL = "unwindToChannel"
  let TO_AVATAR_PICKER = "toAvatarPicker"
  
+ //Colors
+ let slackPurplePlaceHolder = #colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 0.5)
+ 
+ //Notification
+ let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")
+ 
  //
  let TOKEN_KEY  =  "token"
  let LOGGED_IN_KEY = "loggedIn"
