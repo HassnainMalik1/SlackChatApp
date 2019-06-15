@@ -285,6 +285,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="mDn-07-Eei" eventType="touchUpInside" id="43y-dW-090"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -303,6 +306,8 @@
                         <viewLayoutGuide key="safeArea" id="02z-Un-zOc"/>
                     </view>
                     <connections>
+                        <outlet property="userPasswordTxt" destination="r1H-9J-oDG" id="DsI-PO-0Ok"/>
+                        <outlet property="usernameTxt" destination="TN7-8N-Dvi" id="qpk-uQ-R5o"/>
                         <segue destination="MvZ-u2-TfV" kind="show" identifier="toCreateAccount" id="uJ0-KX-bWp"/>
                     </connections>
                 </viewController>

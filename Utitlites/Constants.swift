@@ -16,6 +16,7 @@ import Foundation
  let URL_REGISTER = "http://localhost:3005/v1/account/register"
  let URL_LOGIN = "http://localhost:3005/v1/account/login"
  let URL_ADD_USER = "http://localhost:3005/v1/user/add"
+ let URL_USER_BY_EMAIL = "http://localhost:3005/v1//user/byEmail"
  
  
  
@@ -39,4 +40,10 @@ import Foundation
 
  //Headers
  
- let HEADER = ["ContentType" : "application/json; charset=utf-8"]
+ let HEADER = ["Content-Type" : "application/json; charset=utf-8"]
+ 
+ let BEARAR_HEADER = [
+    "Authorization":"Bearer \(AuthService.instance.authToken)",
+    
+    "Content-Type" : "application/json; charset=utf-8"
+ ]
