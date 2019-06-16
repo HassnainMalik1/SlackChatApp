@@ -12,7 +12,7 @@ import Foundation
  typealias CompletionHander = (_ Success : Bool) -> ()
  
  //Url
- let BASE_URL = "https://localhost:3005/v1/"
+ let BASE_URL = "http://localhost:3005/v1/"
  let URL_REGISTER = "http://localhost:3005/v1/account/register"
  let URL_LOGIN = "http://localhost:3005/v1/account/login"
  let URL_ADD_USER = "http://localhost:3005/v1/user/add"
