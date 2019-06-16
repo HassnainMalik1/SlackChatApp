@@ -33,6 +33,9 @@ import Foundation
  
  //Notification
  let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")
+ let NOTIF_CHANNEL_LOADED  = Notification.Name("channelsLoaded")
+ let NOTIF_CHANNEL_SELECTED  = Notification.Name("channelSelected")
+ 
  
  //
  let TOKEN_KEY  =  "token"
