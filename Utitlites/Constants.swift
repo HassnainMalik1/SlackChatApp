@@ -18,6 +18,7 @@ import Foundation
  let URL_ADD_USER = "http://localhost:3005/v1/user/add"
  let URL_USER_BY_EMAIL = "http://localhost:3005/v1/user/byEmail"
  let URL_GET_CHANNELS = "http://localhost:3005/v1/channel"
+ let URL_GET_MESSAGES = "http://localhost:3005/v1/message/byChannel"
  
  
  
